@@ -1,0 +1,27 @@
+# Dart / Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
+
+# Build outputs
+build/
+/build/
+
+# Android local config (nunca al repo)
+android/local.properties
+android/key.properties
+*.keystore
+*.jks
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# macOS
+.DS_Store
+
+# Archivos generados (los incluimos ya escritos a mano)
+# lib/models/diet_history_entry.g.dart  <- YA incluido, NO ignorar

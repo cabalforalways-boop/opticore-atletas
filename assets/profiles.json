@@ -1,0 +1,42 @@
+[
+  {
+    "id": "fuerza_volumen",
+    "name": "💪 Fuerza y Volumen",
+    "emoji": "🏋️",
+    "description": "Alta proteína (1.8-2.2 g/kg) + CHO moderado. Ideal para ganancia muscular.",
+    "daily_intake_kg": 2.5,
+    "target_kcal_per_kg": 1.28,
+    "target_prot_per_kg": 0.064,
+    "target_cho_per_kg": 0.160
+  },
+  {
+    "id": "resistencia_cardio",
+    "name": "🏃 Resistencia y Cardio",
+    "emoji": "🚴",
+    "description": "Alta carga de CHO (6-8 g/kg) para glucógeno muscular.",
+    "daily_intake_kg": 3.0,
+    "target_kcal_per_kg": 1.30,
+    "target_prot_per_kg": 0.035,
+    "target_cho_per_kg": 0.173
+  },
+  {
+    "id": "definicion_corte",
+    "name": "🔥 Definición y Corte",
+    "emoji": "✂️",
+    "description": "Déficit calórico controlado + proteína alta para preservar músculo.",
+    "daily_intake_kg": 2.0,
+    "target_kcal_per_kg": 1.10,
+    "target_prot_per_kg": 0.095,
+    "target_cho_per_kg": 0.100
+  },
+  {
+    "id": "recuperacion_post",
+    "name": "⚡ Recuperación Post-Entreno",
+    "emoji": "🔋",
+    "description": "Ventana anabólica 0-2h. Ratio CHO:Prot ≥ 2.5:1. Baja grasa.",
+    "daily_intake_kg": 0.7,
+    "target_kcal_per_kg": 1.00,
+    "target_prot_per_kg": 0.050,
+    "target_cho_per_kg": 0.129
+  }
+]

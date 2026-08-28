@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema de arranque: pantalla en blanco mientras Flutter carga -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <!-- Tema normal: una vez que Flutter ha renderizado el primer frame -->
+    <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+</resources>

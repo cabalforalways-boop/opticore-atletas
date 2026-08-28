@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fondo de pantalla de arranque (splash) mientras Flutter inicializa -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/white" />
+</layer-list>

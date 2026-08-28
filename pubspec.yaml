@@ -1,0 +1,47 @@
+name: opticore_atletas_poc
+description: "OptiCore Atletas - Dieta Personalizada de Precision con LP/MILP"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  # FIX: ^3.13.1 no existe. Rango correcto para Flutter 3.22+ / Dart 3.4+
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # HTTP
+  http: ^1.2.2
+
+  # Navegacion
+  go_router: ^14.2.7
+
+  # Graficos nativos
+  fl_chart: ^0.68.0
+
+  # Persistencia offline (historial de dietas)
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.4
+
+  # FIX: share_plus 7.x incompatible con Play Store 2025 (API 35)
+  # Actualizado a version compatible con compileSdk 35
+  share_plus: ^10.0.2
+
+  # Formateo
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  # Generador de codigo para Hive TypeAdapters
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.11
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/profiles.json
