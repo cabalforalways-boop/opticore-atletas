@@ -6,13 +6,53 @@ workflows:
     environment:
       flutter: 3.24.5
       java: 17
+      xcode: latest
+      cocoapods: default
     scripts:
+      - name: Corregir NDK version en build.gradle
+        script: |
+          if [ -f "android/app/build.gradle.kts" ]; then
+            # Verificar si ya existe ndkVersion
+            if ! grep -q "ndkVersion" android/app/build.gradle.kts; then
+              # Agregar ndkVersion después de namespace
+              sed -i.bak '/namespace/a\
+              ndkVersion = "25.1.8937393"' android/app/build.gradle.kts
+            fi
+          elif [ -f "android/app/build.gradle" ]; then
+            # Para archivos Groovy
+            if ! grep -q "ndkVersion" android/app/build.gradle; then
+              sed -i.bak '/namespace/a\
+              ndkVersion "25.1.8937393"' android/app/build.gradle
+            fi
+          fi
+      
+      - name: Corregir import de go_router en diet_result_screen.dart
+        script: |
+          if [ -f "lib/screens/diet_result_screen.dart" ]; then
+            # Verificar si ya existe el import de go_router
+            if ! grep -q "import 'package:go_router/go_router.dart';" lib/screens/diet_result_screen.dart; then
+              # Agregar import después de material.dart
+              sed -i.bak "/import 'package:flutter\/material.dart';/a\\
+              import 'package:go_router/go_router.dart';" lib/screens/diet_result_screen.dart
+            fi
+            
+            # Reemplazar context.push por GoRouter.of(context).push si es necesario
+            sed -i.bak 's/context\.push(/GoRouter.of(context).push(/g' lib/screens/diet_result_screen.dart
+          fi
+      
+      - name: Limpiar build anterior
+        script: flutter clean
+      
       - name: Obtener dependencias
         script: flutter pub get
+      
       - name: Compilar APK debug
         script: flutter build apk --debug --android-skip-build-dependency-validation
+    
     artifacts:
       - build/**/outputs/**/*.apk
+      - build/**/outputs/**/*.aab
+    
     publishing:
       email:
         recipients:
