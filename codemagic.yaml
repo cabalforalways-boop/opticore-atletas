@@ -1,1 +1,23 @@
-null
+workflows:
+
+  android-debug:
+    name: OptiCore Atletas - Debug APK
+    max_build_duration: 30
+    instance_type: linux_x2
+    environment:
+      flutter: stable
+      java: 17
+    scripts:
+      - name: Obtener dependencias
+        script: flutter pub get
+      - name: Compilar APK debug
+        script: flutter build apk --debug
+    artifacts:
+      - build/**/outputs/**/*.apk
+    publishing:
+      email:
+        recipients:
+          - cabalforalways@gmail.com
+        notify:
+          success: true
+          failure: true
