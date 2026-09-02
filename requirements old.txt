@@ -1,0 +1,26 @@
+# OptiCore Atletas v1.0 — Dependencias
+# Instalación: runtime\Scripts\pip install -r requirements.txt
+
+# API REST
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Validación de datos
+pydantic>=2.0.0
+
+# Motor de optimización LP/MILP (HiGHS integrado)
+numpy>=1.26.0
+scipy>=1.11.0
+
+# Interfaz web
+streamlit>=1.28.0
+
+# Cliente HTTP (Streamlit → API)
+requests>=2.31.0
+
+# Datos y exportación
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Gráficos
+plotly>=5.18.0
